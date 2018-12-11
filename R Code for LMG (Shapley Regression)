@@ -35,7 +35,7 @@
 
  lmg.results <- calc.relimp(inputdata,type="lmg",rela=TRUE)
  
- #Steo 3: run the analysis
+ #Step 3: run the analysis
  
  #calculate Shapley Values and R-squared for model
  
