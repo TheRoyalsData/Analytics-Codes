@@ -13,4 +13,6 @@ con <- file('/Users/pvella/Desktop/data/test.json', "r")
 df <- ldply(fromJSON(con), data.frame)
 close(con)
 
+#export data
+
 write.csv(df, file="/Users/pvella/Desktop/data/CSV_from_JSON.csv")
