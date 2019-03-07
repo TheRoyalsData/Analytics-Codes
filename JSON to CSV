@@ -1,0 +1,16 @@
+#CONVERTING JSON TO CSV FOR ANALYSIS
+
+#THIS CODE IS WRITTEN TO RUN ON A MAC
+
+#load required packages
+
+library(plyr)
+library(RJSONIO)
+
+#load data
+
+con <- file('/Users/pvella/Desktop/data/test.json', "r")
+df <- ldply(fromJSON(con), data.frame)
+close(con)
+
+write.csv(df, file="/Users/pvella/Desktop/data/CSV_from_JSON.csv")
