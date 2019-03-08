@@ -4,15 +4,16 @@
 
 #load required packages
 
-library(plyr)
-library(RJSONIO)
+require(RJSONIO)
+require(rjson)
+library("rjson")
 
 #load data
 
-con <- file('/Users/pvella/Desktop/data/test.json', "r")
-df <- ldply(fromJSON(con), data.frame)
-close(con)
+filename2 <- "/Users/pvella/Desktop/data/Archive/claims.json"
+json_data <- fromJSON(file=filename2)
+json <- do.call("rbind", json_data)
 
 #export data
 
-write.csv(df, file="/Users/pvella/Desktop/data/CSV_from_JSON.csv")
+write.csv(json, file="/Users/pvella/Desktop/data/CLAIMS2.csv")
